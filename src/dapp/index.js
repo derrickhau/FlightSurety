@@ -111,9 +111,9 @@ import './flightsurety.css';
 
         DOM.elid('insurance-withdraw').addEventListener('click', () => {
             let passenger = DOM.elid('insurance-buyer-address').value;
-            contract.requestBalance(buyer);
-            display('Withdrawal Issued',
-                "...check buyer info" ,
+            contract.requestBalance(passenger);
+            display('Withdrawal Request',
+                "...check balance" ,
                 [ { label: '', value:  ''} ]);
         })
 

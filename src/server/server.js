@@ -13,14 +13,17 @@ const accounts = web3.eth.getAccounts();
 console.log("server is running");
 
 init();
+// Error: flightSuretyApp is undefined
 let flightSuretyApp = new web3.eth.Contract(FlightSuretyApp.abi, config.appAddress);
 let oracleArr = [];
 const oracleCount = 20;
 
+// Oracles register after moving outside init()
+registerOracles(oracleCount);
+
 async function init() {
 	console.log("init started");		
 
-    registerOracles(oracleCount);
 
 	flightSuretyApp.events.OracleRequest({ fromBlock: 0 }, 
 		(error, event) => {
@@ -35,7 +38,7 @@ async function init() {
        	)
 	});
 };
-// Not Working 
+// Not Working - Update: Oracles register after moving registerOracles() outside init()
 async function registerOracles(oracleCount) {
 	console.log("registerOracles from server.js");		
 	console.log("1");
