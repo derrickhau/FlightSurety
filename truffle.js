@@ -19,5 +19,6 @@ module.exports = {
     }
   }
 };
-// 100 accounts with 10,000eth 300,000,000 gas limit
-// ganache-cli -a 100 -e 10000 -l 300000000 -m candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+/* 100 accounts with 10,000eth 300,000,000 gas limit:
+ganache-cli -a 100 -e 10000 -l 300000000 -m candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+*/
